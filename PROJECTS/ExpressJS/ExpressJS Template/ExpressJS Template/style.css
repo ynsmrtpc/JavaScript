@@ -1,0 +1,6 @@
+.btn { text-decoration: none; padding: 3px; border: 1px solid #3e3e3e; border-radius: 5px; background: rgba(145,145,145,.4); color: black;
+}
+.btn:hover {
+    color: black;
+    background: rgba(145, 145, 145, .3);
+}

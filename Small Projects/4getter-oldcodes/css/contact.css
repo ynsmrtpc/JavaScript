@@ -1,0 +1,44 @@
+:root {
+    --card-background: #26243b;
+}
+
+.svg-contact:hover {
+    transform: none !important;
+}
+
+.svg-contact {
+    width: 40px !important;
+}
+
+.contact-body {
+    margin-top: 30px;
+    color: #ffa500;
+}
+
+.navbar-end {
+    margin-bottom: 30px;
+}
+
+iframe {
+    border: 5px solid #ffa500 !important;
+    border-radius: 6%;
+}
+
+#logo {
+    color: #ffa500 !important;
+}
+
+.text {
+    color: white;
+}
+
+a:hover {
+    text-decoration: none;
+    list-style: none;
+    color: rgb(255, 165, 0, .75);
+}
+
+footer .footer {
+    position: absolute;
+    bottom: 0 !important;
+}

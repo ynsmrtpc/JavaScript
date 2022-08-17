@@ -1,0 +1,29 @@
+{
+    "name": "questionanswerrestapi",
+    "version": "1.0.0",
+    "description": "ExpressJS - Question Answer API",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon server.js",
+        "dev": "nodemon server.js"
+    },
+    "keywords": [
+        "express",
+        "rest",
+        "api"
+    ],
+    "author": "Yunus Emre Topçu",
+    "license": "MIT",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "dotenv": "^16.0.0",
+        "express": "^4.18.1",
+        "express-async-handler": "^1.2.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.3.3"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.16"
+    }
+}
