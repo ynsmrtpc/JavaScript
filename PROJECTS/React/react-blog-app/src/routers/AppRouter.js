@@ -1,5 +1,6 @@
 import React from 'react'
 import BlogListPage from '../components/BlogListPage'
+import MyBlogListPage from '../components/MyBlogListPage'
 import BlogDetailsPage from '../components/BlogDetailsPage'
 import NotFoundPage from '../components/NotFoundPage'
 import { Switch, Route, Router } from 'react-router-dom'
@@ -18,9 +19,10 @@ const AppRouter = () => {
         <Switch>
           <PublicRoute path="/" component={LoginPage} exact />
           <PrivateRoute path="/blogs" component={BlogListPage} exact />
+          <PrivateRoute path="/myblogs" component={MyBlogListPage} exact />
           <PrivateRoute path="/create" component={AddBlogPage} />
           <PrivateRoute path="/edit/:id" component={EditBlogPage} />
-          <PrivateRoute path="/blogs/:id" component={BlogDetailsPage} />
+          <PrivateRoute path="/myblogs/:id" component={BlogDetailsPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>

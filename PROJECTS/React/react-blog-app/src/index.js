@@ -5,7 +5,7 @@ import * as serviceWorker from './serviceWorker'
 import AppRouter, { history } from './routers/AppRouter'
 import './App.css'
 import configureStore from './store/configureStore'
-import { getBlogsFromDb, clearBlogs } from './actions/blogs'
+import { getMyBlogsFromDb, getBlogsFromDb, clearBlogs } from './actions/blogs'
 import './firebase/firebaseConfig'
 import { firebase } from './firebase/firebaseConfig'
 import { loginAction, logoutAction } from './actions/auth'
@@ -33,6 +33,12 @@ firebase.auth().onAuthStateChanged((user) => {
       renderApp()
       if (history.location.pathname === '/') {
         history.push('/blogs')
+      }
+    })
+    store.dispatch(getMyBlogsFromDb()).then(() => {
+      renderApp()
+      if (history.location.pathname === '/') {
+        history.push('/myblogs')
       }
     })
   } else {
