@@ -5,9 +5,10 @@ import * as serviceWorker from './serviceWorker'
 import AppRouter, { history } from './routers/AppRouter'
 import './App.css'
 import configureStore from './store/configureStore'
-import { getBlogsFromDb } from './actions/blogs'
+import { getBlogsFromDb, clearBlogs } from './actions/blogs'
 import './firebase/firebaseConfig'
 import { firebase } from './firebase/firebaseConfig'
+import { loginAction, logoutAction } from './actions/auth'
 
 const store = configureStore()
 const result = (
@@ -27,6 +28,7 @@ const renderApp = () => {
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
+    store.dispatch(loginAction(user.uid))
     store.dispatch(getBlogsFromDb()).then(() => {
       renderApp()
       if (history.location.pathname === '/') {
@@ -34,6 +36,8 @@ firebase.auth().onAuthStateChanged((user) => {
       }
     })
   } else {
+    store.dispatch(logoutAction())
+    store.dispatch(clearBlogs())
     renderApp()
     history.push('/')
   }
